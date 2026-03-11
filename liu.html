@@ -750,16 +750,58 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 0 24px; }
-    .hero-content { padding: 0 24px 60px; grid-template-columns: 1fr; }
+    nav { padding: 0 20px; height: 60px; }
+    .nav-back { display: none; }
+    .nav-cta { padding: 8px 16px; font-size: 10px; }
+
+    .hero { min-height: 100svh; }
+    .hero-content { padding: 0 20px 48px; grid-template-columns: 1fr; }
     .hero-right { display: none; }
-    .container { padding: 0 24px; }
-    .about-grid,
-    .sound-grid,
-    .booking-cta-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-name { font-size: clamp(72px, 22vw, 120px); }
+
+    .container { padding: 0 20px; }
+
+    .about { padding: 72px 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .about h2 { font-size: clamp(40px, 10vw, 60px); margin-bottom: 0; }
+
+    .highlights { padding: 0 0 72px; }
     .highlights-grid { grid-template-columns: 1fr; }
+    .highlight-card { padding: 28px 24px; }
+
+    .sound { padding: 0 0 72px; }
+    .sound-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
+    .quote-block { padding: 32px 24px; }
+
+    .booking-cta { padding: 72px 0; }
+    .booking-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .booking-cta h2 { font-size: clamp(48px, 12vw, 72px); }
+    .cta-buttons { width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; }
+
+    .more-artists { padding: 60px 0; }
     .artist-links { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
+
+    /* Instagram feed stacked on mobile */
+    [style*="grid-template-columns:1fr 2fr"] {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    /* Social stats single column on mobile */
+    [style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: 18vw; }
+    .artist-links { grid-template-columns: 1fr; }
+    .hero-tags { gap: 6px; }
+    .tag { font-size: 8px; padding: 4px 8px; }
   }
 </style>
 </head>
@@ -1034,12 +1076,12 @@
           </div>
           <div class="booking-contact-item">
             <span class="booking-contact-label">Email</span>
-            <a class="booking-contact-value" href="mailto:stephen@deepbloe.com">stephen@deepbloe.com</a>
+            <a class="booking-contact-value" href="/cdn-cgi/l/email-protection#601314051008050e2004050510020c0f054e030f0d"><span class="__cf_email__" data-cfemail="5f2c2b3a2f373a311f3b3a3a2f3d33303a713c3032">[email&#160;protected]</span></a>
           </div>
         </div>
       </div>
       <div class="cta-buttons">
-        <a class="btn-primary" href="mailto:stephen@deepbloe.com?subject=Booking Enquiry — LIU">Send Booking Enquiry ↗</a>
+        <a class="btn-primary" href="/cdn-cgi/l/email-protection#46353223362e23280622232336242a29236825292b793533242c2325327b0429292d2f282166032837332f343f66a4c6d2660a0f13">Send Booking Enquiry ↗</a>
       </div>
     </div>
   </div>
@@ -1082,7 +1124,4 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Scroll reveal — eerst verbergen via JS, zodat zonder JS alles zichtbaar blijft
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach(el => el.classList.add('hidden'));
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"><
