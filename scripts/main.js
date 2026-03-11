@@ -1,5 +1,5 @@
 function openOffer(){document.getElementById("offer-overlay").classList.add("active");document.body.style.overflow="hidden";document.getElementById("offer-overlay").scrollTop=0;}
-function closeOffer(){document.getElementById("offer-overlay").classList.remove("active");document.body.style.overflow="";}
+function closeOffer(){document.getElementById("offer-overlay")).classList.remove("active");document.body.style.overflow="";}
 
 function submitOffer(e){
   e.preventDefault();
