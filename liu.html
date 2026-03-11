@@ -1020,28 +1020,26 @@
         <h2>BOOK<br/><span>LIU.</span></h2>
         <p>
           LIU is available for festival headline slots, club residencies, brand events
-          and private bookings worldwide. All enquiries are handled directly by
-          Deepbloe Agency.
+          and private bookings. Stephen Texidor represents LIU for Europe, Asia,
+          Middle East and Australia.
         </p>
         <div class="booking-contact">
           <div class="booking-contact-item">
+            <span class="booking-contact-label">Agent</span>
+            <span class="booking-contact-value">Stephen Texidor</span>
+          </div>
+          <div class="booking-contact-item">
+            <span class="booking-contact-label">Territories</span>
+            <span class="booking-contact-value" style="color:var(--chrome);font-size:13px;">Europe · Asia · Middle East · Australia</span>
+          </div>
+          <div class="booking-contact-item">
             <span class="booking-contact-label">Email</span>
             <a class="booking-contact-value" href="mailto:stephen@deepbloe.com">stephen@deepbloe.com</a>
-          </div>
-          <div class="booking-contact-item">
-            <span class="booking-contact-label">Instagram</span>
-            <a class="booking-contact-value" href="https://instagram.com/liulive" target="_blank">@liulive</a>
-          </div>
-          <div class="booking-contact-item">
-            <span class="booking-contact-label">Agency</span>
-            <a class="booking-contact-value" href="/">Deepbloe Agency</a>
           </div>
         </div>
       </div>
       <div class="cta-buttons">
         <a class="btn-primary" href="mailto:stephen@deepbloe.com?subject=Booking Enquiry — LIU">Send Booking Enquiry ↗</a>
-        <a class="btn-secondary" href="/#contact">General Contact</a>
-        <a class="btn-secondary" href="https://instagram.com/liulive" target="_blank">Follow on Instagram ↗</a>
       </div>
     </div>
   </div>
@@ -1084,18 +1082,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal — eerst verbergen via JS, zodat zonder JS alles zichtbaar blijft
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach(el => el.classList.add('hidden'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('hidden');
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
-</script>
