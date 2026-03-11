@@ -577,6 +577,10 @@
 <!-- Right: form -->
 <div>
 <form id="contact-form" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:16px;">
+  <input type="hidden" name="access_key" value="cb3fcb04-20e3-423c-8ee7-d6019ab20c29">
+  <input type="hidden" name="subject" value="New Deepbloe Contact Form Submission">
+  <input type="hidden" name="from_name" value="Deepbloe Website">
+  <input type="checkbox" name="botcheck" style="display:none;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
 <div style="display:flex;flex-direction:column;gap:6px;">
 <label style="font-family:monospace;font-size:9px;letter-spacing:0.15em;color:#29ABE2;text-transform:uppercase;">Name</label>
@@ -710,7 +714,11 @@
 </div>
 <!-- OFFER FORM -->
 <div style="max-width:1400px;margin:0 auto;padding:60px 80px 120px;">
-<form id="offer-form" onsubmit="submitOffer(event)" style="display:flex;flex-direction:column;gap:0;">
+<<form id="offer-form" onsubmit="submitOffer(event)" style="display:flex;flex-direction:column;gap:0;">
+  <input type="hidden" name="access_key" value="cb3fcb04-20e3-423c-8ee7-d6019ab20c29">
+  <input type="hidden" name="subject" value="Deepbloe Booking Request">
+  <input type="hidden" name="from_name" value="Deepbloe Booking Form">
+  <input type="checkbox" name="botcheck" style="display:none;">
 <!-- SEC 01 -->
 <div style="padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid #1C1E24;">
 <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#29ABE2;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px;">01 — Offer Details<span style="flex:1;height:1px;background:#1C1E24;display:block;"></span></div>
