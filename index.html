@@ -124,7 +124,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <link href="styles/main.css" rel="stylesheet"/>
 
-</head>
+<style>
+@media (max-width: 768px) {
+
+  /* Nav */
+  nav { padding: 0 20px !important; }
+  .nav-links { display: none !important; }
+
+  /* Hero */
+  .hero-content { padding: 0 20px 48px !important; }
+
+  /* Artist cards — stack vertically */
+  div[style*="flex-direction:row;flex-wrap:nowrap"] {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    padding: 0 !important;
+  }
+  div[style*="flex-direction:row;flex-wrap:nowrap"] > a {
+    min-width: 100% !important;
+    height: 280px !important;
+  }
+
+  /* About / Services 2-col grids */
+  div[style*="grid-template-columns:1fr 1fr;gap:100px"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* General padding fixes */
+  div[style*="padding:0 80px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  div[style*="padding:120px 80px"] {
+    padding: 60px 20px 40px !important;
+  }
+  div[style*="padding:60px 80px"] {
+    padding: 40px 20px 60px !important;
+  }
+  section[style*="padding:80px 0"] {
+    padding: 60px 0 !important;
+  }
+
+  /* Contact form 2-col grid */
+  div[style*="grid-template-columns:1fr 1fr;gap:16px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Booking offer form grids */
+  div[style*="grid-template-columns:1fr 1fr;gap:20px 28px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Services grid */
+  div[style*="grid-template-columns:1fr 1fr;gap:100px;align-items:center"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Footer */
+  footer { flex-direction: column !important; gap: 24px !important; padding: 32px 20px !important; text-align: center !important; }
+  .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
+  .footer-bottom { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
+}
+
+@media (max-width: 480px) {
+  div[style*="flex-direction:row;flex-wrap:nowrap"] > a {
+    height: 240px !important;
+  }
+}
+</style>
+
 <body>
 <!-- CURSOR -->
 <div class="cursor">
