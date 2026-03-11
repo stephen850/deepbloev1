@@ -125,24 +125,67 @@
 <link href="styles/main.css" rel="stylesheet"/>
 
 <style>
-@media (max-width: 768px) {
+/* ── HAMBURGER MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(8,8,8,0.98);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+.mobile-menu a:hover { color: #29ABE2; }
+
+@media (max-width: 768px) {
   /* Nav */
   nav { padding: 0 20px !important; }
   .nav-links { display: none !important; }
+  .nav-cta { display: none !important; }
+  .nav-hamburger { display: flex !important; }
 
   /* Hero */
   .hero-content { padding: 0 20px 48px !important; }
 
-  /* Artist cards — stack vertically */
-  div[style*="flex-direction:row;flex-wrap:nowrap"] {
+  /* Artist cards — stack vertically, full width */
+  #artists-grid {
     flex-direction: column !important;
-    flex-wrap: wrap !important;
     padding: 0 !important;
   }
-  div[style*="flex-direction:row;flex-wrap:nowrap"] > a {
+  #artists-grid > a {
+    width: 100% !important;
     min-width: 100% !important;
-    height: 280px !important;
+    flex: none !important;
+    height: 300px !important;
   }
 
   /* About / Services 2-col grids */
@@ -176,12 +219,6 @@
     grid-template-columns: 1fr !important;
   }
 
-  /* Services grid */
-  div[style*="grid-template-columns:1fr 1fr;gap:100px;align-items:center"] {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-
   /* Footer */
   footer { flex-direction: column !important; gap: 24px !important; padding: 32px 20px !important; text-align: center !important; }
   .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
@@ -189,9 +226,7 @@
 }
 
 @media (max-width: 480px) {
-  div[style*="flex-direction:row;flex-wrap:nowrap"] > a {
-    height: 240px !important;
-  }
+  #artists-grid > a { height: 260px !important; }
 }
 </style>
 
@@ -226,7 +261,20 @@
 <li><a href="https://www.deepbloe.com/private-access" style="color:var(--electric) !important;" target="_blank">Private Access</a></li>
 </ul>
 <a class="nav-cta" href="#contact">Get in Touch</a>
+<div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#artists" onclick="toggleMenu()">Artists</a>
+  <a href="#showcases" onclick="toggleMenu()">Showcases</a>
+  <a href="#team" onclick="toggleMenu()">Team</a>
+  <a href="#contact" onclick="toggleMenu()" style="color:#29ABE2;">Get in Touch</a>
+</div>
 <!-- HERO -->
 <section class="hero">
 <div class="hero-bg">
@@ -380,7 +428,7 @@
 <p style="font-size:14px;color:#C4C8D4;margin-bottom:32px;">A curated selection of global electronic music artists.</p>
 <a class="btn-primary" href="#" onclick="openOffer();return false;" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#080808;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 28px;transition:background 0.2s;">BOOK AN ARTIST <span style="font-size:14px;">↗</span></a>
 </div>
-<div style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:3px;padding:0 3px;">
+<div id="artists-grid" style="display:flex;flex-direction:row;flex-wrap:nowrap;gap:3px;padding:0 3px;">
 <a href="liu.html" style="display:block;text-decoration:none;flex:1;min-width:0;position:relative;overflow:hidden;height:360px;">
 <img src="assets/images/image_03.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(0.65) saturate(0.65);transition:filter 0.3s,transform 0.3s;" onmouseover="this.style.filter='brightness(0.8) saturate(0.8)';this.style.transform='scale(1.03)'" onmouseout="this.style.filter='brightness(0.65) saturate(0.65)';this.style.transform='scale(1)'"/>
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.85) 100%);"></div>
@@ -1125,3 +1173,10 @@
 <textarea name="comments" onblur="this.style.borderColor='#2A2D36'" onfocus="this.style.borderColor='#29ABE2'" placeholder="Anything else we should know..." style="background:#0D0D10;border:1px solid #2A2D36;color:#fff;padding:13px 16px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;resize:vertical;min-height:100px;"></textarea>
 </div>
 <div style="display:flex;align-item
+<script>
+function toggleMenu() {
+  document.getElementById("hamburger").classList.toggle("open");
+  document.getElementById("mobileMenu").classList.toggle("open");
+  document.body.style.overflow = document.getElementById("mobileMenu").classList.contains("open") ? "hidden" : "";
+}
+</script>
